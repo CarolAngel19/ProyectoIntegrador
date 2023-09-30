@@ -5,7 +5,6 @@ public class ProductsArray {
     public ProductsArray() {
         products = new String[20];
 
-        // Inicializar algunos productos de ejemplo.
         products[0] = "Leche Entera Alpina";
         products[1] = "Pasta Spaguetti  Doria ";
         products[2] = "Yogurt Alpina Fresa";
@@ -29,7 +28,7 @@ public class ProductsArray {
     }
 
     public void showProductsStartingWith() {
-        System.out.println("Productos que comienzan con 'A': ");
+        System.out.println("Productos que comienzan con 'C': ");
         for (String product : products) {
             if (product.startsWith("C")) {
                 System.out.println(product);
