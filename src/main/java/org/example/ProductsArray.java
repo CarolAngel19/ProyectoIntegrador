@@ -44,8 +44,9 @@ public class ProductsArray {
         }
     }
     public static void main(String[] args) {
-        ProductsArray productList = new ProductsArray();
+        /*ProductsArray productList = new ProductsArray();
         productList.showProductsStartingWith();
         productList.showAlphabeticalOrder();
+         */
     }
 }

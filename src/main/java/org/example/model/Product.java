@@ -1,4 +1,4 @@
-package model;
+package org.example.model;
 
 public class Product {
     private String name;
@@ -56,6 +56,6 @@ public class Product {
         System.out.println("Inventario agotado: " + product.isOutOfStock());
         System.out.println("Precio mayor que $6.100: " + product.isPriceGreaterThan(6.100));
         System.out.println("Precio menor o igual a $7.500: " + product.isPriceLessThanOrEqualTo(7.500));
-        System.out.println("Nombre contiene 'lap': " + product.doesNameContain("lap"));
+        System.out.println("Nombre contiene 'Pap': " + product.doesNameContain("Pap"));
     }
 }
