@@ -44,7 +44,7 @@ class InventoryManager {
         do {
             displayMenu();
             choice = scanner.nextInt();
-            scanner.nextLine(); // Consume the newline character
+            scanner.nextLine();
             handleUserChoice(choice);
         } while (choice != 8);
     }
@@ -54,7 +54,7 @@ class InventoryManager {
 
         System.out.println("Ingrese el precio del producto: ");
         double price = scanner.nextDouble();
-        scanner.nextLine(); // Consume the newline character
+        scanner.nextLine();
 
         System.out.println("Ingrese el Stock del producto: ");
         int stock = scanner.nextInt();
@@ -83,7 +83,7 @@ class InventoryManager {
     private void removeProduct() {
         System.out.print("Ingrese el ID del producto que desea eliminar: ");
         int productId = scanner.nextInt();
-        scanner.nextLine(); // Consume the newline character
+        scanner.nextLine();
 
         // Busca el producto en el inventario y elimínalo
         for (Product product : inventory) {
@@ -98,7 +98,7 @@ class InventoryManager {
     private void updateProduct() {
         System.out.print("Ingrese el ID del producto que desea actualizar: \n");
         int productId = scanner.nextInt();
-        scanner.nextLine(); // Consume the newline character
+        scanner.nextLine();
 
         // Busca el producto en el inventario
         for (Product product : inventory) {
@@ -109,7 +109,7 @@ class InventoryManager {
 
                 System.out.println("Ingrese el precio del producto: ");
                 double price = scanner.nextDouble();
-                scanner.nextLine(); // Consume the newline character
+                scanner.nextLine();
 
                 System.out.println("Ingrese el Stock del producto: ");
                 int stock = scanner.nextInt();
