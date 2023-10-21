@@ -1,34 +1,98 @@
 package org.example.model;
 
 public class Product {
+    private int id;
     private String name;
     private double price;
     private int stock;
+    private String category;
+    private String description;
+    private String label;
+    private String photo;
 
-    public Product(String name, double price, int stock) {
+
+    public Product(int id, String name, double price, int stock, String category, String description, String label ,String photo) {
+        this.id = id;
         this.name = name;
         this.price = price;
         this.stock = stock;
+        this.category = category;
+        this.description = description;
+        this.label = label;
+        this.photo = photo;
+    }
+    @Override
+    public String toString() {
+        return "ID: " + id +
+                ", Name: " + name +
+                ", Price: " + price +
+                ", Stock: " + stock +
+                ", Category: " + category +
+                ", Description: " + description +
+                ", Label: " + label +
+                ", Photo: " + photo;
+    }
+    // Getters y Setters
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
         return name;
     }
+
     public void setName(String name) {
         this.name = name;
     }
+
     public double getPrice() {
         return price;
     }
+
     public void setPrice(double price) {
         this.price = price;
     }
+
     public int getStock() {
         return stock;
     }
+
     public void setStock(int stock) {
         this.stock = stock;
     }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+    public void setDescription(String description) {
+        this.description = description;
+    }
+    public String getLabel() {
+        return label;
+    }
+    public void setLabel(String label) {
+        this.label = label;
+    }
+    public String getPhoto() {
+        return photo;
+    }
+    public void setPhoto(String photo) {
+        this.photo = photo;
+    }
+
+    /*
     @Override
     public String toString() {
         return "{ 'name':" + name + ", price:" + price + ", stock:" + stock + "}";
@@ -58,4 +122,6 @@ public class Product {
         System.out.println("Precio menor o igual a $7.500: " + product.isPriceLessThanOrEqualTo(7.500));
         System.out.println("Nombre contiene 'Pap': " + product.doesNameContain("Pap"));
     }
+
+     */
 }
