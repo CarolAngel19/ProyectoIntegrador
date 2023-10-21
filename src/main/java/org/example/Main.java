@@ -1,32 +1,7 @@
 package org.example;
-
-import org.example.model.Product;
-import org.example.model.Stock;
-import org.example.model.Sale;
-import org.example.model.Bill;
-import java.util.List;
-
 public class Main {
     public static void main(String[] args) {
         /*
-        String productName = "Papas Super Ricas Todo Rico BBQ";
-        float productPrice = 5.900f;
-        int quantityStock = 10;
-        boolean isAvailable = true;
-        String category = "Pasabocas";
-        String tags = "Papas Fritas y Paquetes";
-        String description = "Bolsa x 250 gr";
-
-        System.out.println("Mi Tienda de Barrio App");
-
-        System.out.println("Nombre del producto: " + productName);
-        System.out.println("Precio del producto: " + productPrice);
-        System.out.println("Cantidad del producto: " + quantityStock);
-        System.out.println("Disponible: " + isAvailable);
-        System.out.println("Categoria del producto: " + category);
-        System.out.println("Etiquetas del producto: " + tags);
-        System.out.println("Descripcion del producto: " + description);
-         */
 
         // Crear instancias de las clases
         Product product1 = new Product(1, "Leche", 3.000, 10, "Lacteos", "Bolsa x 1.100 ml", "Leches", "photo1.jpg");
@@ -51,12 +26,11 @@ public class Main {
         System.out.println("Factura 1: " + bill1.toString());
         System.out.println("Factura 2: " + bill2.toString());
 
+        ProductsArray productList = new ProductsArray();
+        productList.showProductsStartingWith();
+        productList.showAlphabeticalOrder();
 
-
-        //ProductsArray productList = new ProductsArray();
-        //productList.showProductsStartingWith();
-        //productList.showAlphabeticalOrder();
-
+       */
         InventoryManager inventoryManager = new InventoryManager();
         inventoryManager.runMenu();
     }
