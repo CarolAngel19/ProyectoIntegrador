@@ -10,7 +10,6 @@ public class Product {
     private String label;
     private String photo;
 
-
     public Product(int id, String name, double price, int stock, String category, String description, String label ,String photo) {
         this.id = id;
         this.name = name;

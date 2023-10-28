@@ -1,13 +1,12 @@
 package org.example;
 import java.util.Scanner;
 import org.example.model.*;
-
 import java.util.ArrayList;
 import java.util.List;
 
 class InventoryManager {
-
     private List<Product> inventory = new ArrayList<>();
+    private List<Sale> sales = new ArrayList<>();
     private Scanner scanner = new Scanner(System.in);
     private void handleUserChoice(int choice) {
         switch (choice) {
@@ -16,29 +15,33 @@ class InventoryManager {
             case 3 -> updateProduct();
             case 4 -> viewAllProducts();
             case 5 -> searchProduct();
-            case 6 -> viewQuantityProduct();
-            case 7 -> viewCategoryProduct();
+            case 6 -> viewStockProduct();
+            case 7 -> addSale();
             case 8 -> System.out.println("Saliendo...");
             default -> System.out.println("Opción invalida. Por favor intenta de nuevo.");
         }
     }
-
     private void displayMenu() {
-        System.out.println("±------------------------------------±");
-        System.out.println("| Administrador Mi Tienda de Barrio  |");
-        System.out.println("±------------------------------------±");
-        System.out.println("1. Agregar producto                  |");
-        System.out.println("2. Eliminar producto                 |");
-        System.out.println("3. Actualizar producto               |");
-        System.out.println("4. Ver todos los productos           |");
-        System.out.println("5. Buscar productos                  |");
-        System.out.println("6. Ver cantidad de producto          |");
-        System.out.println("7. Agregar Venta                     |");
-        System.out.println("8. Salir                             |");
-        System.out.println("±------------------------------------±");
+        System.out.println("±-----------------------------------±");
+        System.out.println("| Administrador Mi Tienda de Barrio |");
+        System.out.println("±-----------------------------------±");
+        System.out.println("|           Inventario              |");
+        System.out.println("±-----------------------------------±");
+        System.out.println("1. Agregar producto                 |");
+        System.out.println("2. Eliminar producto                |");
+        System.out.println("3. Actualizar producto              |");
+        System.out.println("4. Ver todos los productos          |");
+        System.out.println("5. Buscar productos                 |");
+        System.out.println("6. Ver stock de producto            |");
+        System.out.println("±-----------------------------------±");
+        System.out.println("|            Ventas                 |");
+        System.out.println("±-----------------------------------±");
+        System.out.println("7. Agregar Venta                    |");
+        System.out.println("±-----------------------------------±");
+        System.out.println("8. Salir                            |");
+        System.out.println("±------------------------------------");
         System.out.print("\nIngresa tu opción (1 - 8) : ");
     }
-
     public void runMenu() {
         int choice;
         do {
@@ -48,6 +51,8 @@ class InventoryManager {
             handleUserChoice(choice);
         } while (choice != 8);
     }
+
+    //Funciones
     private void addProduct() {
         System.out.println("Ingrese el nombre del producto: ");
         String name = scanner.nextLine();
@@ -149,7 +154,6 @@ class InventoryManager {
             System.out.println("Nombre: " + product.getName());
             System.out.println("Precio: " + product.getPrice());
             System.out.println("Categoría: " + product.getCategory());
-            System.out.println("Stock: " + product.getStock());
             System.out.println("--------------------------------- \n");
         }
     }
@@ -172,12 +176,11 @@ class InventoryManager {
             }
         }
     }
+    private void viewStockProduct() {
+        System.out.println("ver stock producto");
+    }
+    private void addSale() {
+        System.out.println("agregar venta");
+    }
 
-    //Faltantes
-    private void viewQuantityProduct() {
-        System.out.println("Viendo la cantidad de los productos...");
-    }
-    private void viewCategoryProduct() {
-        System.out.println("Viendo las categorias de los productos...");
-    }
 }

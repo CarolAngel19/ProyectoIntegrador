@@ -1,12 +1,13 @@
 package org.example.model;
+import java.util.Date;
 import java.util.List;
 
 public class Sale {
     private int id;
-    private String fecha;
+    private Date fecha; // Cambio a tipo Date
     private List<Product> productos;
 
-    public Sale(int id, String fecha, List<Product> productos) {
+    public Sale(int id, Date fecha, List<Product> productos) {
         this.id = id;
         this.fecha = fecha;
         this.productos = productos;
@@ -27,11 +28,11 @@ public class Sale {
         this.id = id;
     }
 
-    public String getFecha() {
+    public Date getFecha() {
         return fecha;
     }
 
-    public void setFecha(String fecha) {
+    public void setFecha(Date fecha) {
         this.fecha = fecha;
     }
 
@@ -43,4 +44,3 @@ public class Sale {
         this.productos = productos;
     }
 }
-
