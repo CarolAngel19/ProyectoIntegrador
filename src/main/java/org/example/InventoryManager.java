@@ -1,4 +1,5 @@
 package org.example;
+import java.util.Date;
 import java.util.Scanner;
 import org.example.model.*;
 import java.util.ArrayList;
@@ -177,10 +178,65 @@ class InventoryManager {
         }
     }
     private void viewStockProduct() {
-        System.out.println("ver stock producto");
+        System.out.print("Ingrese el ID del producto para ver su stock: ");
+        int productId = scanner.nextInt();
+        scanner.nextLine();
+
+        for (Product product : inventory) {
+            if (product.getId() == productId) {
+                System.out.println("Stock del producto " + product.getName() + ": " + product.getStock());
+                return;
+            }
+        }
+        System.out.println("Producto no encontrado.");
     }
     private void addSale() {
-        System.out.println("agregar venta");
+        Date currentDate = new Date();
+
+        System.out.println("Productos disponibles para la venta:");
+        viewAllProducts();
+
+        // List product vendidos en la venta
+        List<Product> productosVendidos = new ArrayList<>();
+
+        // Permitir al usuario seleccionar productos para la venta
+        boolean continuarAgregando = true;
+        while (continuarAgregando) {
+            System.out.print("Ingrese el ID del producto que desea vender (0 para salir): ");
+            int productId = scanner.nextInt();
+            scanner.nextLine();
+
+            if (productId == 0) {
+                continuarAgregando = false;
+            } else {
+                // Buscar el producto en el inventario
+                Product selectedProduct = findProductById(productId);
+                if (selectedProduct != null && selectedProduct.getStock() > 0) {
+                    productosVendidos.add(selectedProduct);
+                    selectedProduct.setStock(selectedProduct.getStock() - 1); // Reducir el stock del producto
+                    System.out.println("Producto agregado a la venta.");
+                } else {
+                    System.out.println("Producto no encontrado o fuera de stock.");
+                }
+            }
+        }
+
+        // Crear la venta y agregarla a la lista de ventas
+        int saleId = sales.size() + 1;
+        Sale sale = new Sale(saleId, currentDate, productosVendidos);
+        sales.add(sale);
+        System.out.println("Venta registrada con éxito.");
+    }
+
+    // Busca un producto por su ID en la lista de inventario.
+    private Product findProductById(int productId) {
+        for (Product product : inventory) {
+            if (product.getId() == productId) {
+                return product;
+            }
+        }
+        return null;
     }
 
 }
+
