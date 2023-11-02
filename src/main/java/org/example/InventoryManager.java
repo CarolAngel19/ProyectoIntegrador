@@ -12,10 +12,10 @@ class InventoryManager {
     private void handleUserChoice(int choice) {
         switch (choice) {
             case 1 -> addProduct();
-            case 2 -> removeProduct();
+            case 2 -> deleteProduct();
             case 3 -> updateProduct();
             case 4 -> viewAllProducts();
-            case 5 -> searchProduct();
+            case 5 -> findById();
             case 6 -> viewStockProduct();
             case 7 -> addSale();
             case 8 -> System.out.println("Saliendo...");
@@ -86,7 +86,7 @@ class InventoryManager {
         System.out.println("\n Producto agregado con éxito.");
         System.out.println("------------------------------------------------------");
     }
-    private void removeProduct() {
+    private void deleteProduct() {
         System.out.print("Ingrese el ID del producto que desea eliminar: ");
         int productId = scanner.nextInt();
         scanner.nextLine();
@@ -158,7 +158,7 @@ class InventoryManager {
             System.out.println("--------------------------------- \n");
         }
     }
-    private void searchProduct() {
+    private void findById() {
         System.out.print("Ingrese el nombre o ID del producto a buscar: \n");
         String searchTerm = scanner.nextLine();
 
